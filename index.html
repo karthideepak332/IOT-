@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WATER LEVEL MONITORING</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='demo.css')}}">
+    <link rel="icon" href="{{url_for('static',filename='/images/logo.png')}}"  alt ="logo">
+    <script src="{{url_for('static',filename='demo.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='socket_io.js') }}"></script>
+</head>
+<body>
+    <header>
+        <table>
+            <thead>
+            <tr>
+                <td>
+                    <img src="{{url_for('static',filename='/images/logo.png')}}" width="200" height="200">
+                </td>
+                <td>
+                    <h1>Sri Ramakrishna Mission Vidyalaya College Of Arts And Science </h1> 
+                    <h1 style="text-align: center;">Coimbatore – 641 020</h1> 
+                    </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><h2>Water level monitoring system</h2></td>
+                <td colspan="2" style="text-align: right; ;"><i id="datetime"></td>
+                </tr>
+            <tr>
+                <td colspan="2" style="text-align: right; ;"><i id="datetime"></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><h3><label for="distance">Water Level (In cm): </label></h3></td>
+                <td><input type="text"id="distance"name="distance"value="{{distance}}"readonly></td>
+            </tr>
+            <tr>
+                <td><h3>Motor Control : </h3></td>
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" id="togBtn">
+                        <div class="slider round">
+                         <!--ADDED HTML -->
+                         <span class="on">ON</span>
+                         <span class="off">OFF</span>
+                         <!--END-->
+                        </div>
+                       </label>
+                                       </td>
+            </tr>
+            <tr>
+                <td><h3>Valve Control : </h3></td>
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" id="togBtn">
+                        <div class="slider switch">
+                         <!--ADDED HTML -->
+                         <span class="on">OPEN</span>
+                         <span class="off">CLOSE</span>
+                         <!--END-->
+                        </div>
+                       </label>
+                       
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </header>
+</body>
+</html>
